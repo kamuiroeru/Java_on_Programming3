@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 import java.util.List;
-import java.util.ArrayList;
 
 public class H191 extends JPanel {
     JButton b1, b2, b3, b4, b5, b6, b7, b8;
@@ -46,20 +44,25 @@ public class H191 extends JPanel {
             e.printStackTrace();
         }
         List<Color> darkColor = new ArrayList<>(Arrays.asList(Color.black, Color.red, Color.darkGray, Color.blue));
-        List<Color> lightColor = new ArrayList<>(Arrays.asList(Color.green, Color.yellow, Color.cyan, Color.magenta));
-        Collections.shuffle(darkColor); Collections.shuffle(lightColor);
-        b1.setBackground(lightColor.get(0));
-        b2.setBackground(lightColor.get(0));
-        b3.setBackground(lightColor.get(0));
-        t1.setBackground(lightColor.get(1));
-        t2.setBackground(lightColor.get(1));
-        ta.setBackground(lightColor.get(1));
-        tb.setBackground(lightColor.get(1));
-        b4.setBackground(lightColor.get(2));
-        b5.setBackground(lightColor.get(2));
-        b6.setBackground(lightColor.get(3));
-        b7.setBackground(lightColor.get(3));
-        b8.setBackground(lightColor.get(3));
+        List<String> Fonts = new ArrayList<>(Arrays.asList("IPAexMincho", "IPAexGothic", "Osaka", "ヒラギノ角ゴ StdN"));
+        HashMap<String, Color> FontAndlightColor = new HashMap<>();
+        FontAndlightColor.put("IPAexMincho", Color.green);
+        FontAndlightColor.put("IPAexGothic", Color.yellow);
+        FontAndlightColor.put("Osaka", Color.cyan);
+        FontAndlightColor.put("ヒラギノ角ゴ StdN", Color.magenta);
+        Collections.shuffle(darkColor); Collections.shuffle(Fonts);
+        b1.setFont(new Font(Fonts.get(0),Font.PLAIN,20)); b1.setBackground(FontAndlightColor.get(Fonts.get(0)));
+        b2.setFont(new Font(Fonts.get(0),Font.PLAIN,20)); b2.setBackground(FontAndlightColor.get(Fonts.get(0)));
+        b3.setFont(new Font(Fonts.get(0),Font.PLAIN,20)); b3.setBackground(FontAndlightColor.get(Fonts.get(0)));
+        t1.setFont(new Font(Fonts.get(1),Font.PLAIN,20)); t1.setBackground(FontAndlightColor.get(Fonts.get(1)));
+        t2.setFont(new Font(Fonts.get(1),Font.PLAIN,20)); t2.setBackground(FontAndlightColor.get(Fonts.get(1)));
+        ta.setFont(new Font(Fonts.get(1),Font.PLAIN,20)); ta.setBackground(FontAndlightColor.get(Fonts.get(1)));
+        tb.setFont(new Font(Fonts.get(1),Font.PLAIN,20)); tb.setBackground(FontAndlightColor.get(Fonts.get(1)));
+        b4.setFont(new Font(Fonts.get(2),Font.PLAIN,20)); b4.setBackground(FontAndlightColor.get(Fonts.get(2)));
+        b5.setFont(new Font(Fonts.get(2),Font.PLAIN,20)); b5.setBackground(FontAndlightColor.get(Fonts.get(2)));
+        b6.setFont(new Font(Fonts.get(3),Font.PLAIN,20)); b6.setBackground(FontAndlightColor.get(Fonts.get(3)));
+        b7.setFont(new Font(Fonts.get(3),Font.PLAIN,20)); b7.setBackground(FontAndlightColor.get(Fonts.get(3)));
+        b8.setFont(new Font(Fonts.get(3),Font.PLAIN,20)); b8.setBackground(FontAndlightColor.get(Fonts.get(3)));
         p1_1.setBackground(darkColor.get(0));
         p1_2.setBackground(darkColor.get(1));
         p2_1.setBackground(darkColor.get(2));
