@@ -47,7 +47,8 @@ class FileReadWrite2 {
 
 class ScanFile {
     void dataSum() throws IOException {
-        Scanner sc = new Scanner(new BufferedReader(new FileReader("data.txt")));
+        Scanner sc = new Scanner(new FileReader("data.txt"));
+//        Scanner sc = new Scanner(new BufferedReader(new FileReader("data.txt")));
         double sum = 0;
         while (sc.hasNextDouble()) {
             sum += sc.nextDouble();
